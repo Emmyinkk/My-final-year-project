@@ -4,5 +4,5 @@ module.exports = defineConfig({
 })
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/https://github.com/Emmyinkk/My-final-year-project.git/" : "/",
+  publicPath: ''
 };

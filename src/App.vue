@@ -9,15 +9,15 @@
 </template>
 
 <script>
-  import navbar from './components/navbar.vue';
-  import home from './views/HomeView.vue';
+  // import navbar from './components/navbar.vue';
+  // import home from './views/HomeView.vue';
 
-      export default {
-        components: {
-          navbar,
-          home,
-        }
-      }
+  //     export default {
+  //       components: {
+  //         // navbar,
+  //         home,
+  //       }
+  //     }
 </script>
 
 <style>

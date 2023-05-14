@@ -248,7 +248,7 @@ import { required, email, minLength } from '@vuelidate/validators'
   }
   .Login {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow-y: hidden;    
   }
   .Login::-webkit-scrollbar {
@@ -296,7 +296,7 @@ import { required, email, minLength } from '@vuelidate/validators'
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 80vh;
+    height: 100%;
   }
   .error-msg {
     color: red;
