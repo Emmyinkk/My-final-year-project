@@ -268,7 +268,7 @@
                 }
             },
             submitData() {
-                axios.get('http://localhost/project/save.php?save=1&name=' + this.name + '&matric=' + this.matric + '&topic=' + this.topic)
+                axios.get(' https://futatimetable.online/library/php/save.php?save=1&name=' + this.name + '&matric=' + this.matric + '&topic=' + this.topic)
                 .then(response => {
                     this.storage = response.data;
                     // Handle success response
