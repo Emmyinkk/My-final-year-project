@@ -225,7 +225,7 @@
 
             var config = {
                 method: "GET",
-                url: 'http://localhost/project/get.php?retrieve=1',
+                url: 'https://futatimetable.online/library/php/get.php?retrieve=1',
                 headers: { }
             };
 

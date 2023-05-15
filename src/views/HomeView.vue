@@ -73,7 +73,7 @@ export default {
 
       var config = {
         method: "get",
-        url: 'http://localhost/project/res.php?fetch_topics=1',
+        url: 'https://futatimetable.online/library/php/res.php?fetch_topics=1',
         headers: { }
       };
 

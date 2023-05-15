@@ -105,7 +105,7 @@ import { required, email, minLength } from '@vuelidate/validators'
 
       var config = {
         method: "GET",
-        url: 'http://localhost/project/login.php?login=1&user=ola@futa.edu.ng&password=Password1',
+        url: 'https://futatimetable.online/library/php/login.php?login=1&user=ola@futa.edu.ng&password=Password1 ',
         headers: { }
       };
 
