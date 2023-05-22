@@ -7,10 +7,10 @@
                 </div>
                 <div>
                     <ul>
-                        <li class="chosen">
+                        <li @click="showProj" class="listt chosen" id="pList">
                             <svg width="30" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M30.0938 15.75H20.25C19.3549 15.75 18.4964 15.3944 17.8635 14.7615C17.2306 14.1286 16.875 13.2701 16.875 12.375V2.53125C16.875 2.45666 16.8454 2.38512 16.7926 2.33238C16.7399 2.27963 16.6683 2.25 16.5938 2.25H10.125C8.93153 2.25 7.78693 2.72411 6.94302 3.56802C6.09911 4.41193 5.625 5.55653 5.625 6.75V29.25C5.625 30.4435 6.09911 31.5881 6.94302 32.432C7.78693 33.2759 8.93153 33.75 10.125 33.75H25.875C27.0685 33.75 28.2131 33.2759 29.057 32.432C29.9009 31.5881 30.375 30.4435 30.375 29.25V16.0312C30.375 15.9567 30.3454 15.8851 30.2926 15.8324C30.2399 15.7796 30.1683 15.75 30.0938 15.75ZM23.625 27H12.375C12.0766 27 11.7905 26.8815 11.5795 26.6705C11.3685 26.4595 11.25 26.1734 11.25 25.875C11.25 25.5766 11.3685 25.2905 11.5795 25.0795C11.7905 24.8685 12.0766 24.75 12.375 24.75H23.625C23.9234 24.75 24.2095 24.8685 24.4205 25.0795C24.6315 25.2905 24.75 25.5766 24.75 25.875C24.75 26.1734 24.6315 26.4595 24.4205 26.6705C24.2095 26.8815 23.9234 27 23.625 27ZM23.625 21.375H12.375C12.0766 21.375 11.7905 21.2565 11.5795 21.0455C11.3685 20.8345 11.25 20.5484 11.25 20.25C11.25 19.9516 11.3685 19.6655 11.5795 19.4545C11.7905 19.2435 12.0766 19.125 12.375 19.125H23.625C23.9234 19.125 24.2095 19.2435 24.4205 19.4545C24.6315 19.6655 24.75 19.9516 24.75 20.25C24.75 20.5484 24.6315 20.8345 24.4205 21.0455C24.2095 21.2565 23.9234 21.375 23.625 21.375Z" fill="white"/>
-                                <path d="M29.4764 13.2602L19.3648 3.14856C19.3451 3.12901 19.3201 3.11571 19.2929 3.11034C19.2657 3.10496 19.2375 3.10774 19.2119 3.11834C19.1863 3.12893 19.1643 3.14687 19.1489 3.16988C19.1334 3.1929 19.1251 3.21997 19.125 3.2477V12.375C19.125 12.6733 19.2435 12.9595 19.4545 13.1705C19.6655 13.3814 19.9516 13.5 20.25 13.5H29.3773C29.405 13.4999 29.4321 13.4915 29.4551 13.4761C29.4781 13.4606 29.496 13.4387 29.5066 13.4131C29.5172 13.3875 29.52 13.3593 29.5146 13.3321C29.5093 13.3049 29.496 13.2799 29.4764 13.2602Z" fill="white"/>
+                                <path d="M30.0938 15.75H20.25C19.3549 15.75 18.4964 15.3944 17.8635 14.7615C17.2306 14.1286 16.875 13.2701 16.875 12.375V2.53125C16.875 2.45666 16.8454 2.38512 16.7926 2.33238C16.7399 2.27963 16.6683 2.25 16.5938 2.25H10.125C8.93153 2.25 7.78693 2.72411 6.94302 3.56802C6.09911 4.41193 5.625 5.55653 5.625 6.75V29.25C5.625 30.4435 6.09911 31.5881 6.94302 32.432C7.78693 33.2759 8.93153 33.75 10.125 33.75H25.875C27.0685 33.75 28.2131 33.2759 29.057 32.432C29.9009 31.5881 30.375 30.4435 30.375 29.25V16.0312C30.375 15.9567 30.3454 15.8851 30.2926 15.8324C30.2399 15.7796 30.1683 15.75 30.0938 15.75ZM23.625 27H12.375C12.0766 27 11.7905 26.8815 11.5795 26.6705C11.3685 26.4595 11.25 26.1734 11.25 25.875C11.25 25.5766 11.3685 25.2905 11.5795 25.0795C11.7905 24.8685 12.0766 24.75 12.375 24.75H23.625C23.9234 24.75 24.2095 24.8685 24.4205 25.0795C24.6315 25.2905 24.75 25.5766 24.75 25.875C24.75 26.1734 24.6315 26.4595 24.4205 26.6705C24.2095 26.8815 23.9234 27 23.625 27ZM23.625 21.375H12.375C12.0766 21.375 11.7905 21.2565 11.5795 21.0455C11.3685 20.8345 11.25 20.5484 11.25 20.25C11.25 19.9516 11.3685 19.6655 11.5795 19.4545C11.7905 19.2435 12.0766 19.125 12.375 19.125H23.625C23.9234 19.125 24.2095 19.2435 24.4205 19.4545C24.6315 19.6655 24.75 19.9516 24.75 20.25C24.75 20.5484 24.6315 20.8345 24.4205 21.0455C24.2095 21.2565 23.9234 21.375 23.625 21.375Z"/>
+                                <path d="M29.4764 13.2602L19.3648 3.14856C19.3451 3.12901 19.3201 3.11571 19.2929 3.11034C19.2657 3.10496 19.2375 3.10774 19.2119 3.11834C19.1863 3.12893 19.1643 3.14687 19.1489 3.16988C19.1334 3.1929 19.1251 3.21997 19.125 3.2477V12.375C19.125 12.6733 19.2435 12.9595 19.4545 13.1705C19.6655 13.3814 19.9516 13.5 20.25 13.5H29.3773C29.405 13.4999 29.4321 13.4915 29.4551 13.4761C29.4781 13.4606 29.496 13.4387 29.5066 13.4131C29.5172 13.3875 29.52 13.3593 29.5146 13.3321C29.5093 13.3049 29.496 13.2799 29.4764 13.2602Z"/>
                             </svg>
                             <span>Project</span>
                         </li>
@@ -26,9 +26,9 @@
                             </svg>
                             <span>Add Students</span>
                         </li> -->
-                        <li>
+                        <li @click="showLec" class="listt" id="addL">
                             <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3.75 5.828C3.75 8.8205 6.0075 11.078 9 11.078C11.9925 11.078 14.25 8.8205 14.25 5.828C14.25 2.8355 11.9925 0.578003 9 0.578003C6.0075 0.578003 3.75 2.8355 3.75 5.828ZM25.5 5H22.5V9.5H18V12.5H22.5V17H25.5V12.5H30V9.5H25.5V5ZM3 21.5H18V20C18 15.8645 14.6355 12.5 10.5 12.5H7.5C3.3645 12.5 0 15.8645 0 20V21.5H3Z" fill="#828282"/>
+                                <path d="M3.75 5.828C3.75 8.8205 6.0075 11.078 9 11.078C11.9925 11.078 14.25 8.8205 14.25 5.828C14.25 2.8355 11.9925 0.578003 9 0.578003C6.0075 0.578003 3.75 2.8355 3.75 5.828ZM25.5 5H22.5V9.5H18V12.5H22.5V17H25.5V12.5H30V9.5H25.5V5ZM3 21.5H18V20C18 15.8645 14.6355 12.5 10.5 12.5H7.5C3.3645 12.5 0 15.8645 0 20V21.5H3Z"/>
                             </svg>
                             <span>Add Lecturers</span>
                         </li>
@@ -106,16 +106,22 @@
                                 </div>
                             </div>
                             <div class="inpuuts">
-                                <div>
-                                    <div class="length">
-                                        <p style="margin-bottom: 1.5em;">Attach Your Project Document</p>
-                                        <label for="file" class="fInput">Upload file</label>
-                                    </div>
-                                    <input type="file" name="" id="file" hidden />
+                                <div class="custom-file-upload">
+                                    <input id="file-upload" type="file" ref="imageUploader"  @change="onFileChange"  class="input-file" />
+                                        <div v-if="!files || !files.length" class="fllex"> 
+                                            <div class="icon"><i class="ri-upload-cloud-fill"></i></div>
+                                            <br>
+                                            <p style="text-align: left;">Upload files<br>PNG, JPG, JEPG</p>
+                                        </div>
+                                        <div v-else>
+                                            <p v-for="file in files" :key="file.name">
+                                                <span  class="image-name_color"> {{ file.name }} </span> 
+                                            </p>
+                                        </div>
                                 </div>
                                 <div tyle="width: 47%">
                                     <p>Project Page</p>
-                                    <input type="number" name="" id="" >
+                                    <input type="number" name="pages" id="pages" v-model="pages">
                                 </div>
                             </div>
                             <div class="inpuuts">
@@ -132,8 +138,9 @@
                             <p>All Projects</p>
                         </div>
                         <div class="bodyy">
-                            <div class="slab"  @click="shownew"> 
-                                <div style="position: relative">
+                            <div class="slab"> 
+                                <!-- @click="shownew" -->
+                                <div class="parent">
                                     <p>Automated Market Basket Analysis System</p>
                                     <div style="display: flex; gap: 10px">
                                         <p class="name">Fagbemi Emmanuel</p>
@@ -145,15 +152,24 @@
                                         <div class="pages">68 Pages</div>
                                         <p class="date">Jan 01 2023</p>
                                     </div>
-                                    <!-- <button class="delete" @click="test">
-                                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 3C17.2652 3 17.5196 3.10536 17.7071 3.29289C17.8946 3.48043 18 3.73478 18 4C18 4.26522 17.8946 4.51957 17.7071 4.70711C17.5196 4.89464 17.2652 5 17 5H16L15.997 5.071L15.064 18.142C15.0281 18.6466 14.8023 19.1188 14.4321 19.4636C14.0619 19.8083 13.5749 20 13.069 20H4.93C4.42414 20 3.93707 19.8083 3.56688 19.4636C3.1967 19.1188 2.97092 18.6466 2.935 18.142L2.002 5.072C2.00048 5.04803 1.99982 5.02402 2 5H1C0.734784 5 0.48043 4.89464 0.292893 4.70711C0.105357 4.51957 0 4.26522 0 4C0 3.73478 0.105357 3.48043 0.292893 3.29289C0.48043 3.10536 0.734784 3 1 3H17ZM11 0C11.2652 0 11.5196 0.105357 11.7071 0.292893C11.8946 0.48043 12 0.734784 12 1C12 1.26522 11.8946 1.51957 11.7071 1.70711C11.5196 1.89464 11.2652 2 11 2H7C6.73478 2 6.48043 1.89464 6.29289 1.70711C6.10536 1.51957 6 1.26522 6 1C6 0.734784 6.10536 0.48043 6.29289 0.292893C6.48043 0.105357 6.73478 0 7 0H11Z" fill="#F04B4B"/>
-                                        </svg>
-                                        <span>Delete</span>
-                                    </button> -->
+                                    <div class="absBtn">
+                                        <button class="edit" @click="fire">
+                                            <svg width="18" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M6.41421 15.89L16.5563 5.74786L15.1421 4.33365L5 14.4758V15.89H6.41421ZM7.24264 17.89H3V13.6474L14.435 2.21233C14.8256 1.8218 15.4587 1.8218 15.8492 2.21233L18.6777 5.04075C19.0682 5.43128 19.0682 6.06444 18.6777 6.45497L7.24264 17.89ZM3 19.89H21V21.89H3V19.89Z" fill="#128BC7"/>
+                                            </svg>
+                                            <span>Edit</span>
+                                        </button>
+                                        <button class="delete" @click="test">
+                                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9.79419 8.47349L8.89419 7.59849C8.69419 7.41515 8.45652 7.32749 8.18119 7.33549C7.90652 7.34415 7.67752 7.44015 7.49419 7.62349C7.31086 7.80682 7.21919 8.04015 7.21919 8.32349C7.21919 8.60682 7.31086 8.84015 7.49419 9.02349L10.0942 11.6235C10.2775 11.8068 10.5109 11.8985 10.7942 11.8985C11.0775 11.8985 11.3109 11.8068 11.4942 11.6235L14.1192 8.99849C14.3025 8.81515 14.3902 8.58582 14.3822 8.31049C14.3735 8.03582 14.2775 7.80682 14.0942 7.62349C13.9109 7.44015 13.6775 7.34415 13.3942 7.33549C13.1109 7.32749 12.8775 7.42349 12.6942 7.62349L11.7942 8.47349V5.29849C11.7942 5.01515 11.6985 4.78182 11.5072 4.59849C11.3152 4.41515 11.0775 4.32349 10.7942 4.32349C10.5109 4.32349 10.2735 4.41915 10.0822 4.61049C9.89019 4.80249 9.79419 5.04015 9.79419 5.32349V8.47349ZM6.79419 15.3235H14.8192C15.1025 15.3235 15.3359 15.2275 15.5192 15.0355C15.7025 14.8442 15.7942 14.6068 15.7942 14.3235C15.7942 14.0402 15.6982 13.8025 15.5062 13.6105C15.3149 13.4192 15.0775 13.3235 14.7942 13.3235H6.76919C6.48586 13.3235 6.25252 13.4192 6.06919 13.6105C5.88586 13.8025 5.79419 14.0402 5.79419 14.3235C5.79419 14.6068 5.88986 14.8442 6.08119 15.0355C6.27319 15.2275 6.51086 15.3235 6.79419 15.3235ZM10.7942 20.3235C9.41086 20.3235 8.11086 20.0608 6.89419 19.5355C5.67752 19.0108 4.61919 18.2985 3.71919 17.3985C2.81919 16.4985 2.10686 15.4402 1.58219 14.2235C1.05686 13.0068 0.794189 11.7068 0.794189 10.3235C0.794189 8.94015 1.05686 7.64015 1.58219 6.42349C2.10686 5.20682 2.81919 4.14849 3.71919 3.24849C4.61919 2.34849 5.67752 1.63582 6.89419 1.11049C8.11086 0.58582 9.41086 0.323486 10.7942 0.323486C12.1775 0.323486 13.4775 0.58582 14.6942 1.11049C15.9109 1.63582 16.9692 2.34849 17.8692 3.24849C18.7692 4.14849 19.4815 5.20682 20.0062 6.42349C20.5315 7.64015 20.7942 8.94015 20.7942 10.3235C20.7942 11.7068 20.5315 13.0068 20.0062 14.2235C19.4815 15.4402 18.7692 16.4985 17.8692 17.3985C16.9692 18.2985 15.9109 19.0108 14.6942 19.5355C13.4775 20.0608 12.1775 20.3235 10.7942 20.3235Z" fill="#924374"/>
+                                            </svg>
+
+                                            <span>Download</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div v-html="this.storage" @click="shownew"></div>
+                            <div v-html="this.storage"></div>
                         </div>
                     </div>
                     <div class="otherStudents">
@@ -185,20 +201,43 @@
                             <p>Add Lecturers</p>
                         </div>
                         <div class="bodyy">
-                            <div class="slab"> 
-                                <div style="position: relative">
-                                    <p class="name2">Fagbemi Emmanuel</p>
-                                    <div class="det" style="display: flex;">
-                                        <div class="pdf">IFT</div>
-                                        <p class="mat">IFT/16/0003</p>
-                                    </div>
-                                    <button class="delete">
-                                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 3C17.2652 3 17.5196 3.10536 17.7071 3.29289C17.8946 3.48043 18 3.73478 18 4C18 4.26522 17.8946 4.51957 17.7071 4.70711C17.5196 4.89464 17.2652 5 17 5H16L15.997 5.071L15.064 18.142C15.0281 18.6466 14.8023 19.1188 14.4321 19.4636C14.0619 19.8083 13.5749 20 13.069 20H4.93C4.42414 20 3.93707 19.8083 3.56688 19.4636C3.1967 19.1188 2.97092 18.6466 2.935 18.142L2.002 5.072C2.00048 5.04803 1.99982 5.02402 2 5H1C0.734784 5 0.48043 4.89464 0.292893 4.70711C0.105357 4.51957 0 4.26522 0 4C0 3.73478 0.105357 3.48043 0.292893 3.29289C0.48043 3.10536 0.734784 3 1 3H17ZM11 0C11.2652 0 11.5196 0.105357 11.7071 0.292893C11.8946 0.48043 12 0.734784 12 1C12 1.26522 11.8946 1.51957 11.7071 1.70711C11.5196 1.89464 11.2652 2 11 2H7C6.73478 2 6.48043 1.89464 6.29289 1.70711C6.10536 1.51957 6 1.26522 6 1C6 0.734784 6.10536 0.48043 6.29289 0.292893C6.48043 0.105357 6.73478 0 7 0H11Z" fill="#F04B4B"/>
-                                        </svg>
-                                        <span>Delete</span>
-                                    </button>
+                            <div class="inpuuts">
+                                <div style="width: 47%">
+                                    <p>Name</p>
+                                    <input type="text" name="name" placeholder="example example">
                                 </div>
+                                <div style="width: 47%" >
+                                    <p>Email</p>
+                                    <input type="email" name="email" placeholder="example@futa.edu.ng">
+                                </div>
+                            </div>
+                            <div class="spacee"></div>
+                            <div class="inpuuts">
+                                <div style="width: 47%">
+                                    <p>School</p>
+                                    <div class="fixedd">SOC</div>
+                                    <!-- <input type="text"> -->
+                                </div>
+                                <div style="width: 47%" >
+                                    <p>Department</p>
+                                    <div class="fixedd">Information Technology</div>
+                                    <!-- <input type="text"> -->
+                                </div>
+                            </div>
+                            <div class="spacee"></div>
+                            <div class="inpuuts">
+                                <div style="width: 47%">
+                                    <p>Password</p>
+                                    <input type="password" id="pass" name="password" placeholder="••••••••">
+                                </div>
+                                <div style="width: 47%" >
+                                    <p>Confirm Password</p>
+                                    <input type="password" id="cpass" name="cpassword" placeholder="••••••••">
+                                </div>
+                            </div>
+                            <div class="spacee"></div>
+                            <div class="btnDiv">
+                                <button>Add Lecturer</button>
                             </div>
                         </div>
                     </div>
@@ -216,7 +255,9 @@
                 name: "",
                 matric: "",
                 topic: "",
+                pages: "",
                 storage: "",
+                files: null
             }
         },
 
@@ -225,7 +266,8 @@
 
             var config = {
                 method: "GET",
-                url: 'https://futatimetable.online/library/php/get.php?retrieve=1',
+                url: 'http://localhost/project/get.php?retrieve=1',
+                // https://futatimetable.online/library/php/
                 headers: { }
             };
 
@@ -234,16 +276,16 @@
                 this.username = response.data
 
                 this.storage = this.username;
-                console.log(this.storage);
+                // console.log(this.storage);
             })
             .catch(function (error) {
                 console.log(error);
             })
 
-            if(this.username !== "") {
-                $(".other2").show()
-                $(".noFile").hide()
-            }
+            // if(this.username !== "") {
+            //     $(".other2").show()
+            //     $(".noFile").hide()
+            // }
         },
 
         methods: {
@@ -268,7 +310,8 @@
                 }
             },
             submitData() {
-                axios.get(' https://futatimetable.online/library/php/save.php?save=1&name=' + this.name + '&matric=' + this.matric + '&topic=' + this.topic)
+                axios.get('http://localhost/project/save.php?save=1&name=' + this.name + '&matric=' + this.matric + '&topic=' + this.topic + '&pages=' + this.pages)
+                // https://futatimetable.online/library/php/
                 .then(response => {
                     this.storage = response.data;
                     // Handle success response
@@ -279,12 +322,46 @@
                 });
             },
 
+            fire() {
+                console.log(this.pages)
+            },
+
             shownew() {
                 this.$router.push('/project');
             },
             test() {
                 this.$router.push('/');
-            }
+            },
+
+            showLec() {
+                const add = document.getElementById("addL");
+                const proj = document.getElementById("pList");
+
+                $(".addLecturer").show();
+                $(".other2").hide();
+                add.classList.add("chosen");
+                proj.classList.remove("chosen");
+            },
+
+            showProj() {
+                const add = document.getElementById("addL");
+                const proj = document.getElementById("pList");
+
+                $(".addLecturer").hide();
+                $(".other2").show();
+                add.classList.remove("chosen");
+                proj.classList.add("chosen");
+            },
+
+            onFileChange(e) {
+                const error = document.querySelector ('.errorMsg');
+
+                this.files = e.target.files
+
+                if(this.files) {
+                    error.style.display = 'none';
+                } 
+            },
         },
     }
 
@@ -324,6 +401,14 @@
         display: none;
     } */
 
+    .listt svg{
+        fill: #828282;
+    }
+
+    .changed {
+        background: #128BC7;
+    }
+
     #next {
         display: none;
     }
@@ -332,6 +417,10 @@
         border-radius: 12px;
         color: white;
         width: 180px;
+    }
+
+    .chosen svg {
+        fill: white;
     }
     .logout {
         position: absolute;
@@ -397,12 +486,12 @@
     button svg {
         margin-top: .9em;
     }
-     .other2, .otherStudents, .addLecturer, .other{
+     .addLecturer, .otherStudents, .noFile, .other{
         width: 90%;
         margin: 0 auto;
         display: none;
     }
-    .noFile{
+    .other2{
         width: 90%;
         margin: 0 auto;
     }
@@ -437,8 +526,9 @@
         padding: 1em;
         height: 450px;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
-    .bodyy input[type=text], .fixedd{
+    .bodyy input[type=text], input[type=email], input[type=password], .fixedd{
         border: 1px solid #667085;
         border-radius: 4px;
         padding: .5em;
@@ -448,6 +538,28 @@
         font-size: 16px;
         line-height: 24px;
         color: #667085;
+    }
+
+    .inpuuts p {
+        color:#344054;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .spacee {
+        margin: 2em 0em;
+    }
+
+    .btnDiv {
+        text-align: center;
+    }
+
+    .btnDiv button {
+        background: #128BC7;
+        color: white;
+        width: 30%;
+        border-radius: 8px;
+        padding: 1em .5em;
     }
     .bodyy input[type=number] {
         border: 1px solid #667085;
@@ -506,27 +618,50 @@
         color: #828282;
         margin-top: .5em;        
     }
-    .delete {
+
+    .absBtn {
         position: absolute;
         top: 50%;
-        right: -6%;
+        right: -160px;
+        width: 250px;
         transform: translate(-50%, -50%);
         display: flex;
-        background: #FAE5EC;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .delete {
+        display: flex;
+        background: #F6EEFF;
         padding: 10px 20px;
         gap: 4px;
         border-radius: 28px;
-        z-index: 9999999
+        /* z-index: 9999999 */
     }
-    .delete svg {
+
+    .edit {
+        display: flex;
+        background: #E9F8FF;
+        padding: 10px 20px;
+        gap: 4px;
+        border-radius: 28px;
+        /* z-index: 9999999 */
+    }
+    .delete svg, .edit svg {
         margin-top: -.2em;
     }
-    .delete span {
+    .delete span, .edit span {
         font-weight: 500;
-        font-size: 12px;
+        font-size: 10px;
         line-height: 16px;
         letter-spacing: -0.01em;
-        color: #F04B4B;
+    }
+
+    .delete span {
+        color: #924374;
+    }
+
+    .edit span {
+        color: #128BC7;
     }
     .slab {
         box-shadow: 0px 4px 8px -4px rgba(0, 0, 0, 0.25), inset 0px -1px 1px rgba(0, 0, 0, 0.04), inset 0px 2px 0px rgba(255, 255, 255, 0.25);
@@ -549,6 +684,11 @@
         letter-spacing: -0.01em;
         color: #2D2927;
         margin-bottom: 1em;
+    }
+
+    .parent {
+        position: relative; 
+        width: 100%;
     }
 
     @media only screen and (max-width: 425px) {

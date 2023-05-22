@@ -8,28 +8,36 @@
           <p class="min">Please fill your detail to access your account.</p>
 
           <div class="flexx2">
-              <p @mouseover="hover2()" @mouseout="noHover2()" @click="changg()" class="lec overlay" id="lecture">As a Lecturer</p>
-              <p @mouseover="hover()" @mouseout="noHover()" @click="changee()" class="stu" id="student">As a Student</p>
+              <p class="lec overlay" id="lecture">As a Lecturer</p>
+              <!-- <p @mouseover="hover()" @mouseout="noHover()" @click="changee()" class="stu" id="student">As a Student</p>
+              
+                @mouseover="hover2()" @mouseout="noHover2()" @click="changg()"
+              -->
           </div>
 
           <form @submit.prevent="onSubmit">
               <div class="lecturer">
                   <div>
                       <p>Email</p>
-                      <input type="email" placeholder="name@futa.edu.ng" v-model="v$.form.email.$model">
-                      <div class="input-errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
+                      <input type="email" placeholder="name@futa.edu.ng" id="emaill">
+                      <!-- v-model="v$.form.email.$model" -->
+                      <!-- <div class="input-errors" v-for="(error, index) of v$.form.email.$errors" :key="index">
                         <div class="error-msg">{{ error.$message }}</div>
-                      </div>
+                      </div> -->
                   </div>
-                  <div :class="{ error: v$.form.password.$errors.length }">
+                  <div>
+                    <!-- :class="{ error: v$.form.password.$errors.length }" 
+                    
+                    v-model="v$.form.password.$model"
+                    -->
                       <p>Password</p>
-                      <input type="password" placeholder="••••••••" v-model="v$.form.password.$model">
-                      <div class="input-errors" v-for="(error, index) of v$.form.password.$errors" :key="index">
+                      <input type="password" placeholder="••••••••">
+                      <!-- <div class="input-errors" v-for="(error, index) of v$.form.password.$errors" :key="index">
                         <div class="error-msg">{{ error.$message }}</div>
-                      </div>
+                      </div> -->
                   </div>
               </div>
-              <div class="student">
+              <!-- <div class="student">
                   <div>
                       <p>Matric Number</p>
                       <input type="text" placeholder="IFT/16/0024" v-model="v$.form.text.$model">
@@ -44,7 +52,7 @@
                         <div class="error-msg">{{ error.$message }}</div>
                       </div>
                   </div>
-              </div>
+              </div> -->
               <div class="flexx1">
                   <div class="flexx">
                       <input type="checkbox" id="remember">
@@ -69,7 +77,7 @@
 <script>
 import navbar from '@/components/navbar'
 import useVuelidate from '@vuelidate/core'
-import { required, email, minLength } from '@vuelidate/validators'
+// import { required, email, minLength } from '@vuelidate/validators'
 
   export default {
     name: 'Login',
@@ -78,34 +86,35 @@ import { required, email, minLength } from '@vuelidate/validators'
       return { v$: useVuelidate() }
     },
 
-    data() {
-      return {
-        form: {
-          email: '',
-          text: '',
-          password: '',
-          username: '',
-        },
-      }
-    },
-    computed: {
-      email: {
-            get() {
-                return this.$store.state.email
-            },
-            set(value) {
-                this.$store.commit('addEmail', value)
-                // this.v$.form.email.$model()
-            }
+    // data() {
+    //   return {
+    //     form: {
+    //       email: '',
+    //       text: '',
+    //       password: '',
+    //       username: '',
+    //     },
+    //   }
+    // },
+    // computed: {
+    //   email: {
+    //         get() {
+    //             return this.$store.state.email
+    //         },
+    //         set(value) {
+    //             this.$store.commit('addEmail', value)
+    //             // this.v$.form.email.$model()
+    //         }
             
-        },
-    },
+    //     },
+    // },
     mounted() {
     var axios = require('axios');
 
       var config = {
         method: "GET",
-        url: 'https://futatimetable.online/library/php/login.php?login=1&user=ola@futa.edu.ng&password=Password1 ',
+        url: 'http://localhost/project/login.php?login=1&user=ola@futa.edu.ng&password=Password1',
+        // https://futatimetable.online/library/php/login.php?login=1&user=ola@futa.edu.ng&password=Password1 
         headers: { }
       };
 
@@ -124,28 +133,30 @@ import { required, email, minLength } from '@vuelidate/validators'
       navbar,
     },
 
-    validations() {
-      return {
-        form: {
-          email: {
-            required, email 
-          },
-          text: {
-            required,
-            min: minLength(11)
-          },
-          password: {
-              required, 
-          },
-        },
-      }
-    },
+    // validations() {
+    //   return {
+    //     form: {
+    //       email: {
+    //         required, email 
+    //       },
+    //       text: {
+    //         required,
+    //         min: minLength(11)
+    //       },
+    //       password: {
+    //           required, 
+    //       },
+    //     },
+    //   }
+    // },
 
     methods: {
       onSubmit() {
         var submit = document.querySelector(".submit");
 
-        if(this.$store.state.email === "ola@futa.edu.ng") {
+        var email = document.getElementById('emaill')
+
+        if(email.value === "ola@futa.edu.ng") {
           submit.disabled = false;
           this.$router.push('/admin')
           
@@ -248,8 +259,12 @@ import { required, email, minLength } from '@vuelidate/validators'
   }
   .Login {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     overflow-y: hidden;    
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
   }
   .Login::-webkit-scrollbar {
     display: none;
@@ -288,6 +303,8 @@ import { required, email, minLength } from '@vuelidate/validators'
     filter: blur(175px);
     z-index: -1;
   }
+
+
   .Login2 {
     width: 95%;
     max-width: 300px;
@@ -499,12 +516,16 @@ import { required, email, minLength } from '@vuelidate/validators'
     }
   }
   @media only screen and (min-width: 1024px) {
+    .main {
+      margin-top: 2em;
+    }
     .Login2 {
       width: 40%;
     }
     .majorImg {
       display: block;
       width: 45%;
+      margin-top: 1.5em;
     }
   }
 </style>

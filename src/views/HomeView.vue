@@ -16,27 +16,23 @@
             <p class="ip">Input project topic below</p>
             <div class="inputs">
               <i class="ri-search-2-line"></i>
-              <input type="search" placeholder="Project topic or keyword"  id="search" @keyup="filterFunction" @change="show">
+              <input type="search" placeholder="Project topic or keyword"  id="search" @keyup="filterFunction" @change="show" @blur="checkk">
               <!-- ; filterFunction() -->
               <button id="searchBtn" @click="check()">Search</button>
               <!-- @click="check()" -->
-              <div class="searchBox" id="searchBox">
-                <div>
-                    
-                </div>
-                <ul class="result" id="result">
-                  <!-- <router-link to="/project">{{ topic }}</router-link> -->
-                  
-                  <li v-for="(topic, index) in allData" :key="index">
-                    <router-link to="/project">{{ topic }}</router-link>
-                  </li>
-                </ul>
-                <!-- <div>
-                  <div class="default">
-                    <img src="@/assets/SnF.png" alt="">
-                    <p>No results found</p>
+              <div class="searchBox" id="searchBox" >
+                  <ul class="result" id="result"> 
+                      <li v-for="(topic, index) in allData" :key="index">
+                        <router-link to="/project" id="empty">{{ topic }}</router-link>
+                      </li>
+                  </ul>
+                  <div v-if="isEmpty">
+                    No data found!
+                      <div class="default">
+                          <img src="@/assets/SnF.png" alt="">
+                          <p>No results found</p>
+                      </div>
                   </div>
-                </div> -->
               </div>
             </div>
             <svg width="99" height="99" viewBox="0 0 99 99" fill="none" xmlns="http://www.w3.org/2000/svg" class="book">
@@ -65,6 +61,13 @@ export default {
   data() {
     return {
       allData: '',
+      empty: false,
+    }
+  },
+
+  computed: {
+    isEmpty: function () {
+      return jQuery.isEmptyObject(this.allData)
     }
   },
 
@@ -73,7 +76,8 @@ export default {
 
       var config = {
         method: "get",
-        url: 'https://futatimetable.online/library/php/res.php?fetch_topics=1',
+        url: 'http://localhost/project/res.php?fetch_topics=1',
+        // 'https://futatimetable.online/library/php/res.php?fetch_topics=1' 
         headers: { }
       };
 
@@ -81,7 +85,7 @@ export default {
       .then((response) =>  {
         this.allData = response.data
 
-        console.log(JSON.stringify(this.allData))
+        // console.log(JSON.stringify(this.allData))
       })
       .catch(function (error) {
         console.log(error);
@@ -91,38 +95,6 @@ export default {
   components: {
     navbar,
   },
-
-  // created() {
-  //     this.fetchApi();
-  // },
-
-  // computed: {
-  //   allData() {
-  //     // var top = this.topicFeed;
-  //     var topicSearchString = this.topicSearchString;
-
-  //     // if(!topicSearchString) {
-  //     //   return top;
-  //     // }
-
-  //     // topicSearchString = topicSearchString.trim().toLowerCase();
-
-  //     // top = top.filter(function(item) {
-  //     //   if(item.topic.toLowerCase().indexOf(topicSearchString) !== -1) {
-  //     //     return item;
-  //     //   }
-  //     var input
-
-  //       if(topicSearchString.toLowerCase().indexOf(filter) !== -1) {
-
-  //       }
-  //     // });
-
-
-
-  //     return topicSearchString;
-  //   }
-  // },
 
   methods: {
 
@@ -149,6 +121,7 @@ export default {
       } else {
         $(".searchBox").hide(200);
       }
+
     },
     show() {
 
@@ -159,6 +132,18 @@ export default {
       } else {
         $(".searchBox").hide(200);
       }
+    },
+
+    checkk() {
+        const searchBox = document.getElementById('empty')
+
+        if(searchBox.childNodes.length === 0) {
+            $(".default").show()
+            console.log('Element is empty')
+        } else {
+            $(".default").hide()
+            console.log('Element is not empty')
+        }
     },
     // show() {
 
@@ -362,7 +347,7 @@ export default {
    }
 
    .default {
-    /* display: none; */
+    display: none;
     margin-top: 1.5em;
     text-align: center;
     

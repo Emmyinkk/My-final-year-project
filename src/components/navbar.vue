@@ -9,7 +9,7 @@
                     <div class="flexx1">
                         <li><router-link to="/" active-link='active'>Home</router-link></li>
                         <!-- <li><router-link to="/faq">FAQ</router-link></li> -->
-                        <li><router-link to="/admin">admin</router-link></li>
+                        <!-- <li><router-link to="/admin">admin</router-link></li> -->
                     </div>
                     
                     <!-- <li @click="dawn()"><i class="ri-moon-line dawn"></i></li>
@@ -28,7 +28,7 @@
             <div class="vertical">               
                 <li><router-link to="/" active-link='active' @click="close()">Home</router-link></li>
                 <!-- <li @click="close()"><router-link to="/faq">FAQ</router-link></li> -->
-                <li @click="close()"><router-link to="/admin">admin</router-link></li>
+                <!-- <li @click="close()"><router-link to="/admin">admin</router-link></li> -->
                 <li><router-link to="/login" @click="close()"><p class="login">Login</p></router-link></li>
             </div>
         </div>
